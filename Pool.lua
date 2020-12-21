@@ -13,7 +13,9 @@ local DEGENERATE_CFRAME = CFrame.new(0, 10000, 0)
 
 --// VARIABLES //--
 
-
+local HandleAdornmentFolder = Instance.new("Folder")
+HandleAdornmentFolder.Name = "HandleAdornmentFolder"
+HandleAdornmentFolder.Parent = workspace
 
 --// CONSTRUCTORS //--
 
@@ -63,7 +65,7 @@ function CLASS:generateGizmo(gizmoType, color, transparency)
 	else
 		gizmo = Instance.new(gizmoType)
 		gizmo.Adornee = workspace.Terrain
-		gizmo.Parent = workspace.Terrain
+		gizmo.Parent = HandleAdornmentFolder
 	end
 	gizmo.Color3 = color
 	gizmo.Transparency = transparency
